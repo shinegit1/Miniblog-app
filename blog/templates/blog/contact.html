@@ -1,0 +1,44 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block title %}Contact Page{% endblock title %}
+{% block content %}
+<div class="col-sm-10 mb-4">
+  <h3 class="text-white ms-4">Contact Us:</h3><br>
+    <form action="" method="post" autocomplete='off' novalidate> {% csrf_token %}
+      <div class="row g-3 ms-5">
+        <div class="col-md-5">
+          {{form.first_name.label_tag}} <br><br>{{form.first_name}}
+          <small class='text-warning'>{{form.first_name.errors|striptags}}</small> <br> 
+        </div>
+        <div class="col-md-5">
+          {{form.last_name.label_tag}} <br><br>{{form.last_name}}
+          <small class='text-warning'>{{form.last_name.errors|striptags}}</small> <br>
+        </div>
+        <div class="col-md-5">
+          {{form.email.label_tag}}<br><br> {{form.email}}
+          <small class='text-warning'>{{form.email.errors|striptags}}</small> <br>
+        </div>
+        <div class="col-md-5">
+          {{form.address.label_tag}} <br><br>{{form.address}}
+          <small class='text-warning'>{{form.address.errors|striptags}}</small> <br>
+        </div>
+        <div class="col-md-10">
+          {{form.message.label_tag}} <br><br>{{form.message}}
+          <small class='text-warning'>{{form.message.errors|striptags}}</small> <br>
+        </div>
+        <div class="col-md-5 m-4">
+          <button type="submit" class="btn btn-primary"><b>Send</b></button> &nbsp
+          <a href="{% url 'login' %}" class="btn btn-success"><b>Log In</b></a> &nbsp
+          <a href="{% url 'home' %}" class="btn btn-sm btn-warning"><b>Home</b></a>
+        </div>
+      </div>
+
+        {% if form.non_field_errors %}
+          {% for error in form.non_field_errors %}
+          <p class='alert alert-danger my-3'> {{error}}</p>
+          {% endfor %}
+        {% endif %}
+    </form>
+</div>
+
+{% endblock content %}

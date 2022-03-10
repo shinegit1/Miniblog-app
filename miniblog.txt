@@ -1,0 +1,9 @@
+Mini Blog is my project based on CRUD functions
+
+super user:
+username =admin
+password =root123
+
+first user:
+username =bloguser
+password =miniroot1

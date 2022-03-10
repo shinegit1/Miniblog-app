@@ -1,0 +1,57 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block title %}Profile Page{% endblock title %}
+{% block content %}
+<div class="col-sm-7">
+  <h3 class="text-white ms-4">Your account detail:</h3> <br>
+  <form action="" method="post" novalidate> {% csrf_token %}
+    <div class="form-group ms-5">
+      <div class="col-md-7 ms-4">
+          {% for fm in form %}
+            {{fm.label_tag}} <br><br>{{fm}}
+            <small class='text-warning'>{{fm.errors|striptags}}</small><br><br>
+          {% endfor %}
+      </div>
+      <div class="col-md-6 ms-5">
+        <button type="submit" class="btn btn-primary"><b>Update</b></button> &nbsp Or &nbsp
+        <a href="{% url 'change' %}" class="btn btn-sm btn-warning"><b>Change password</b></a>
+      </div>
+    </div> <br>
+   {% if form.non_field_errors %}
+      {% for error in form.non_field_errors %}
+      <p class='alert alert-danger my-3'> {{error}}</p>
+      {% endfor %}
+    {% endif %} 
+  </form>
+</div>
+{% if users != None %}
+  <div class="col-4">
+    <p class="text-white"><i>Total Number of posts -></i> <b>{{post}}</b></p>
+    <h4 class="text-white">List of Users:</h4> <br>
+    <table class="table table-hover bg-white">
+      <thead>
+        <tr>
+          <th scope='col' style='width:2%'>ID</th>
+          <th scope='col' style='width:15%'>Username</th>
+        </tr>
+      </thead>
+      <tbody>
+        {% for user in users %}
+          <tr>
+            <th scope='row'><a href="{% url 'detail' user.id %}" class="btn btn-light"> {{user.id}}</a> </th>
+            <td> {{user.username}} </td>
+            <td class="text-center">
+              <form action="{% url 'del_user' user.id %}" method="post" class='d-inline'>
+                {% csrf_token %}
+                <input type="submit" value="Delete" class='btn btn-danger btn-sm'>
+              </form>
+            </td>
+          </tr>
+        {% endfor %}
+      </tbody>
+    </table>
+  </div>
+{% else %}
+
+{% endif %}
+{% endblock content %}

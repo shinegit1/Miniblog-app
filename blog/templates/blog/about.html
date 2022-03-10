@@ -1,0 +1,20 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block title %}About Page{% endblock title %}
+{% block content %}
+<div class="col-sm-10 m-5">
+<h2 class="text-white">About -> MINI BlOG</h2>
+<p>Mini blog app is a based on CRUD function project. This is a blog posting app for users.
+Here new user sign up the page and go to dashboard page, where he/she(also logged in) posts new blogs and can update them also.
+It is quite helpful to you through share your ideas, thought and opinion for a specific purpose in the publically. </p>
+<p>
+It is gives you a easy support to interact with other's perspetive about your blogs. Furthermore, you can modify
+and add more information in your blogs as you need. Even if you post more and more, it will grow your limitation of 
+knowledge. Without any delay, use this app quickly as well as freely.
+</p>
+<h4>Thank you.</h4> <br>
+&nbsp <a href="{% url 'login' %}" class="btn btn-success"><b>Log In</b> </a> &nbsp
+<a href="{% url 'home' %}" class="btn btn-sm btn-warning"><b>Home</b></a>
+</div>
+
+{% endblock content %}

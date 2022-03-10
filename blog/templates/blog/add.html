@@ -1,0 +1,24 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block title %}New Blog Page{% endblock title %}
+{% block content %}
+<div class="col-sm-10 mb-5">
+  <h3 class='text-white ms-5'>Dashboard/ Add New Blog:</h3>
+  <form action="" autocomplete='off' method="post" novalidate> {% csrf_token %}
+    <div class="col-md-10 ms-5">
+      {% for fm in form %}
+        <br>{{fm.label_tag}} <br><br>{{fm}} <small class='text-warning'>{{fm.errors|striptags}}</small><br> 
+      {% endfor %}
+    </div> <br>
+    <div class="col-sm-5 ms-5">
+      <button type="submit" class="btn btn-light">Add Blog</button> &nbsp
+      <a href="{% url 'dashboard' %}" class="btn btn-warning">Dashboard</a>
+    </div>
+    {% if form.non_field_errors %}
+      {% for error in form.non_field_errors %}
+      <p class='alert alert-danger my-3'> {{error}}</p>
+      {% endfor %}
+    {% endif %}
+  </form>
+</div>
+{% endblock content %}

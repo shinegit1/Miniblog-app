@@ -1,0 +1,17 @@
+body{
+  background-color:#10736F;
+  color: antiquewhite;
+}
+
+.jumbo-color{
+  background-color: #208A85 ;
+  font-size: 8px;
+}
+
+.form-control{
+  background-color: #0BB9B2;
+}
+p{
+  font-size: 20px;
+  margin-left: 10px;
+}
