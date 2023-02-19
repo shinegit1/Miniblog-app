@@ -10,7 +10,6 @@ on:
     pull_request:
       -paths:
         -'**.py'
-        -'test_blog.yml'
 
 jobs:
   tests:
