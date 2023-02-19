@@ -6,11 +6,16 @@ name: Python application
 on:
   push:
     branches:
+      -master
     pull_request:
+      -paths:
+        -'**.py'
+        -'test_blog.yml'
 
 jobs:
   tests:
     runs-on: ubuntu-latest
+    if: github.event_path == '**.py'
     steps:
       - uses: actions/checkout@v3
       - name: Set up Python 3.10
