@@ -1,15 +1,13 @@
 {% extends 'base.html' %}
 {% load static %}
 {% block title %}SignUp Page{% endblock title %}
+{% block msg %}
+  {% include 'components/success_message.html' %}
+{% endblock msg %}
+
 {% block content %}
 <div class="col-sm-10 ms-4">
   <h2 class="text-white ms-3 mt-2">Become an Author:</h2><br>
-  {% if messages %}
-    {% for msg in messages %}
-      <p {% if msg.tags %} class='alert alert-{{msg.tags}} mb-5' {% endif %}> {{msg}} </p>
-    {% endfor %}
-  {% endif %}
-
   <form action="" method="post" autocomplete='off' novalidate> {% csrf_token %}
     <div class="row g-3 ms-4">
       <div class="col-md-5">

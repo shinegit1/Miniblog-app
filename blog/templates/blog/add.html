@@ -1,6 +1,10 @@
 {% extends 'base.html' %}
 {% load static %}
 {% block title %}New Blog Page{% endblock title %}
+{% block msg %}
+  {% include 'components/success_message.html' %}
+{% endblock msg %}
+
 {% block content %}
 <div class="col-sm-10 mb-5">
   <h3 class='text-white ms-5'>Dashboard/ Add New Blog:</h3>

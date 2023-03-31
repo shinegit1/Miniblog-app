@@ -1,6 +1,10 @@
 {% extends 'base.html' %}
 {% load static %}
 {% block title %}Profile Page{% endblock title %}
+{% block msg %}
+  {% include 'components/success_message.html' %}
+{% endblock msg %}
+
 {% block content %}
 <div class="col-sm-7">
   <h3 class="text-white ms-4">Your account detail:</h3> <br>

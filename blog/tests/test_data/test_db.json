@@ -1,36 +1,29 @@
 [
-    {
-        "model": "auth.user",
-        "pk": 2,
-        "fields": {
-          "password": "pbkdf2_sha256$390000$nB6yO7M3nHx9wgbpwUlnvY$MvBUbTIBJ05C9/ro6vFZVgED5xWuQj3j/5vKXaKgNfs=",
-          "last_login": "2022-10-31T17:58:29.209Z",
-          "is_superuser": false,
-          "username": "user1",
-          "first_name": "",
-          "last_name": "",
-          "email": "user@gmail.com",
-          "is_staff": false,
-          "is_active": true,
-          "date_joined": "2022-10-31T17:58:16.983Z",
-          "groups": [],
-          "user_permissions": []
-        }
-    },
-    {
-        "model": "blog.post",
-        "pk": 1,
-        "fields": {
-            "title": "What is future of Computer Science?",
-            "descript": "Computer Science is the study of computers and computational systems."
-        }
-    },
-    {
-        "model": "blog.post",
-        "pk": 2,
-        "fields": {
-            "title": "How to code clean and readable?",
-            "descript": "Developers still need to learn Python best practices and design patterns to write clean code."
-        }
+  {
+    "model": "auth.user",
+    "pk": 2,
+    "fields": {
+      "password": "pbkdf2_sha256$390000$LyI6JxgkmEOsS1dsc21oQ4$4Bq23eRgEN/6d51sVXbRmdn5efu6tbw7zkBBMI5LlyQ=",
+      "last_login": null,
+      "is_superuser": false,
+      "username": "bloguser1",
+      "first_name": "blog_1",
+      "last_name": "user_1",
+      "email": "bloguser1@gmail.com",
+      "is_staff": false,
+      "is_active": true,
+      "date_joined": "2023-03-31T12:04:41.405Z",
+      "groups": [],
+      "user_permissions": []
     }
+  },
+  {
+    "model": "blog.post",
+    "pk": 1,
+    "fields": {
+      "user": 2,
+      "title": "T-Systems on site services GmbH",
+      "descript": "We live agility with the associated values on a daily basis."
+    }
+  }
 ]
